@@ -1,109 +1,46 @@
-import React from "react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import img from "../images/images.jpeg";
+import Cards from "./Cards";
 
 const Main = () => {
+  const [firstSlide, setFirstSlide] = useState([
+    {
+      url: "https://images.unsplash.com/photo-1695048132853-026f93f40f7f?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    },
+    {
+      url: "https://images.unsplash.com/photo-1702184117235-56002cb13663?q=80&w=1527&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    },
+    {
+      url: "https://images.unsplash.com/photo-1629131726692-1accd0c53ce0?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    },
+  ]);
   return (
-    <div>
-      <div className="border-2 border-red-700 flex justify-start items-start w-full p-3">
-        Brand Name
-      </div>
-
-      <nav class="bg-black/60 dark:bg-gray-900">
-        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-          <a
-            href="https://flowbite.com/"
-            class="flex items-center space-x-3 rtl:space-x-reverse"
-          >
-            <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
-              Flowbite
-            </span>
-          </a>
-          <button
-            data-collapse-toggle="navbar-default"
-            type="button"
-            class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-            aria-controls="navbar-default"
-            aria-expanded="false"
-          >
-            <span class="sr-only">Open main menu</span>
-            <svg
-              class="w-5 h-5"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 17 14"
-            >
-              <path
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M1 1h15M1 7h15M1 13h15"
-              />
-            </svg>
-          </button>
-          <div className="ml-12">
-            <input
-              type="text"
-              className="py-3 focus:outline-none px-8 ml-2 h-[5%] mt-3 rounded-full"
-              placeholder="Search for a product"
-            />
-            <button className="h-[10%]">🔎</button>
-          </div>
-
-          <div class="hidden w-full md:block md:w-auto" id="navbar-default">
-            <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-              <li>
-                <a
-                  href="#"
-                  class="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500"
-                  aria-current="page"
-                >
-                  Home
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-                >
-                  About
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-                >
-                  Services
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-                >
-                  Pricing
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-                >
-                  Contact
-                </a>
-              </li>
-            </ul>
-          </div>
+    <>
+      <div className="p-2 flex justify-between w-full bg-black/60 text-white h-30 sticky top-0">
+        <h1 className="p-4 text-2xl ml-4 font-bold">Brand Name</h1>
+        <div className="sm:flex gap-8 hidden sm:block text-xl mr-2 p-4">
+          <Link>Home</Link>
+          <Link>About</Link>
+          <Link to="/signup">Account</Link>
+          <Link>Cart</Link>
         </div>
-      </nav>
-      <div className=" bg-black/90 h-[500px] flex justify-between w-full">
-        <div className="text-white  mt-2 h-[10%] p-2 ">Hello</div>
-        <div className="text-white">User</div>
+        <button className="mr-7 p-4">Search</button>
       </div>
-      <div className="text-black"></div>
-    </div>
+      <div className="flex flex-col h-[500px] w-full sm:items-center sm:flex-row sm:justify-center">
+        <div className="flex flex-col w-[40%] mx-auto m-6 sm:w-[30%] border-2 border-black  justify-center">
+          <img className="object-contain" src={firstSlide[0].url} />
+        </div>
+        <div className="m-4 text-center w-[80%] mx-auto sm:flex sm:w-[40%] sm:flex-col sm:mx-auto ">
+          <h1 className="my-5 font-bold text-4xl">Macbook M3 Pro</h1>
+          <p className="sm:text-center text-black/60 sm:text-2xl text-xl font-bold">
+            Featuring the M3 Pro chip, it delivers blazing-fast speeds for
+            demanding tasks like video editing and 3D rendering.
+          </p>
+        </div>
+      </div>
+      <Cards />
+    </>
   );
 };
-
 export default Main;
